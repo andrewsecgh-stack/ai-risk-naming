@@ -1,0 +1,16 @@
+# Working notes containing private and unattributed source material.
+# Deliberately excluded — see private/README.md before changing this.
+private/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
