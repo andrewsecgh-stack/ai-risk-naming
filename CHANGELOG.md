@@ -9,7 +9,23 @@ Versioning is informal while the framework is a working draft.
 ## [Unreleased]
 
 ### Added
+- **The Secondhand Executive** — a senior decision-maker who has delegated reading, summarizing and
+  replying to agents, and now works entirely from unaudited compressions. Fills the **LLM09
+  Misinformation** gap, which had no persona. Deliberately *not* merged into The Overengineer: that
+  persona wastes money doing simple things elaborately, this one degrades judgment, and no control
+  is shared between them.
 - Repository scaffolding: contribution bar, issue and PR templates, contributor credits, license.
+
+- **Agent Sprawl** condition — sanctioned tools spawning autonomous processes nobody has enumerated.
+  Distinct from Shadow AI (unsanctioned tools) and Ownership Drift (unowned credentials): an agent
+  can be sanctioned, correctly owned, and still invisible. Related to The Overengineer in concept but
+  different in kind — one person building too much versus an organization losing count of what got
+  built — so the two do not compete for the same slot.
+
+### Open for review
+- **The Secondhand Executive** primary OWASP mapping: LLM09 (the harm — decisions on lossy output)
+  versus LLM06 (the mechanism — delegated authority to read, summarize and reply). Left provisional
+  pending contributor input.
 
 ## [0.3] — insider trilogy and the null intent case
 

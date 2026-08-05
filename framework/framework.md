@@ -82,6 +82,7 @@ preparedness when the scenario bites. Recov = recoverability of the usual impact
 | The Over-Permissioned Assistant | An agent is granted more tools/scopes than its task needs. | Builder | N | LLM06 Excessive Agency | Mixed |
 | The Runaway Agent | A well-intended agent loops unbounded and burns compute/budget. | Automated agent | N | LLM10 Unbounded Consumption | Reversible |
 | The Overengineer | An unskilled user builds needlessly complex agent setups, burning many times the tokens for the same result. | Insider / builder | I | LLM10 Unbounded Consumption | Reversible |
+| The Secondhand Executive | A senior decision-maker experiences the whole organization through agent summaries nobody audits. | Insider (senior) | L→N | LLM09 Misinformation / LLM06 | Mixed |
 | The Overnight Cowboy | Unattended AI testing runs in production with no containment. | Automated agent | L | LLM06 / LLM10 | Mixed |
 
 Notes:
@@ -173,6 +174,24 @@ e.g., routing everything to a top-tier model "just in case."
 *You've felt this when:* every task, trivial or not, hits the biggest model. *Why it's dangerous:*
 straight-line cost inflation with no quality gain — an easy CFO conversation. *Control:* model
 right-sizing / tiering policy, per-model cost dashboards, default to the cheapest model that passes.
+
+### Agent Sprawl — *(coin)*
+Sanctioned AI tools quietly spawning autonomous processes that nobody has enumerated. The tools are
+approved and the accounts may even have owners — what is missing is any answer to *how many are
+running, and what can they touch.*
+*You've felt this when:* someone asks how many agents are operating against a system and the honest
+answer is a shrug. *Why it's dangerous:* excessive agency at a scale nobody sized, cost accruing
+across processes nobody totals, and no way to assess blast radius during an incident because the
+inventory does not exist. Feeds **The Ghost Login** (unowned processes hide in the crowd) and
+**The Secondhand Executive** (layers accumulate faster than anyone tracks them).
+*Distinct from:* **Shadow AI** — there the tools are unsanctioned; here they are approved. And from
+**Ownership Drift** — there the failure is ownership; here it is enumeration. An agent can be fully
+sanctioned, correctly owned, and still be invisible.
+*Control:* an agent registry with registration required before deployment; scoped, least-privilege
+permissions per agent rather than per platform; periodic discovery to catch what never got
+registered; per-agent budgets so cost surfaces the unregistered ones.
+*Relationship to The Overengineer:* the same instinct at different altitudes — that persona is one
+person building too much; this is an organization losing count of what got built.
 
 ### Agent Theater — *(coin; driver, not a control target)*
 The human motive under Needless Complexity: ego-driven over-engineering — performing sophistication
