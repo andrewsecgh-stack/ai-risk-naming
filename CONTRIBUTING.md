@@ -35,6 +35,11 @@ And one scope rule:
 - **Six words maximum.** Shorter is better. "The Disgruntled Employee," not "The Retaliatory Insider
   Resource Exhaustion Scenario."
 - **Actor plus action**, not mechanism. Personas name characters; OWASP already names mechanisms.
+- **Exception — artifact personas.** Where the actor is an anonymous upstream stranger the victim
+  will never meet, name the **artifact they actually encounter** instead. The test: *what does the
+  person on the receiving end see?* Nobody meets the attacker who poisoned a repo; they meet the
+  file. The Poisoned PDF and The Trojan Rulebook are named this way deliberately. This is a narrow
+  exception, not licence to name mechanisms — if there is a human worth naming, name the human.
 - **Adopt before you coin.** If the industry already has an accepted term — shadow AI, automation
   bias — use it and mark it *adopted*. Only coin where no agreed name exists, and mark it *coined*.
   This discipline is what makes the catalog citable rather than merely clever.

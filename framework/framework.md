@@ -79,6 +79,7 @@ preparedness when the scenario bites. Recov = recoverability of the usual impact
 | The Oversharer | A well-meaning employee pastes secrets or PII into a public AI tool. | Insider | N | LLM02 Sensitive Info Disclosure | Irreversible |
 | The Copy-Paste Contractor | Someone pastes untrusted outside content straight into a prompt. | Insider | I | LLM01 Prompt Injection | Mixed |
 | The Poisoned PDF | Hidden instructions ride in on a shared document (indirect injection). | Outsider | M | LLM01 Prompt Injection | Mixed |
+| The Trojan Rulebook | An auto-loaded instruction file carries hidden commands the assistant obeys. | Outsider + insider | M + I | LLM03 Supply Chain / LLM01 | Mixed→irreversible |
 | The Over-Permissioned Assistant | An agent is granted more tools/scopes than its task needs. | Builder | N | LLM06 Excessive Agency | Mixed |
 | The Runaway Agent | A well-intended agent loops unbounded and burns compute/budget. | Automated agent | N | LLM10 Unbounded Consumption | Reversible |
 | The Overengineer | An unskilled user builds needlessly complex agent setups, burning many times the tokens for the same result. | Insider / builder | I | LLM10 Unbounded Consumption | Reversible |

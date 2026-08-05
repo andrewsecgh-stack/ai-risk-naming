@@ -22,10 +22,24 @@ Versioning is informal while the framework is a working draft.
   different in kind — one person building too much versus an organization losing count of what got
   built — so the two do not compete for the same slot.
 
+- **The Trojan Rulebook** — an auto-loaded agent instruction file (`AGENTS.md`, `CLAUDE.md`, rules
+  and skill files) carrying hidden commands. Fills the **LLM03 Supply Chain** gap. Merge with The
+  Poisoned PDF was considered and rejected: that is content a person deliberately supplied, this is
+  loaded automatically as *instruction*, every session, unopened — different privilege, different
+  control.
+
+### Changed — naming rules
+- **Artifact personas are now permitted** as a narrow exception. Where the actor is an anonymous
+  upstream stranger the victim never meets, the persona is named for the artifact they actually
+  encounter. Applies to The Poisoned PDF and The Trojan Rulebook. Recorded in `CONTRIBUTING.md`.
+
 ### Open for review
 - **The Secondhand Executive** primary OWASP mapping: LLM09 (the harm — decisions on lossy output)
   versus LLM06 (the mechanism — delegated authority to read, summarize and reply). Left provisional
   pending contributor input.
+- **Two-actor scenarios.** The Trojan Rulebook is the first entry containing two humans with
+  different intents — a malicious planter and an ignorant triggerer. The axes assume a single actor.
+  Whether this needs an axis change, a compound-intent convention, or a per-entry note is unsettled.
 
 ## [0.3] — insider trilogy and the null intent case
 
