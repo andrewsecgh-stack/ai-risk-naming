@@ -53,10 +53,11 @@ framework/
   framework.md        the matrix — axes, both catalogs, scoring
   entry-template.md   the quality bar every persona entry must meet
 personas/             full worked entries, one file per persona
-publishing/           posts, slides and generators for public writing
-private/              working notes — NOT tracked, see private/README.md
 .github/              issue and PR templates encoding the contribution bar
 ```
+
+Published writing (posts, slides, and their generators) is kept outside the repository — this is the
+framework, not the publicity around it.
 
 ---
 

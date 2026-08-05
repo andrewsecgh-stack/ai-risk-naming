@@ -2,6 +2,10 @@
 # Deliberately excluded — see private/README.md before changing this.
 private/
 
+# Publishing assets (LinkedIn posts, slide generators, exported images).
+# Kept locally, not part of the framework itself.
+publishing/
+
 # OS and editor noise
 .DS_Store
 Thumbs.db
