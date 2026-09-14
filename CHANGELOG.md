@@ -8,6 +8,16 @@ Versioning is informal while the framework is a working draft.
 
 ## [Unreleased]
 
+### Added — full entries for previously sketched personas
+- Seven catalog personas were developed from one-line catalog rows into full worked entries meeting
+  the `entry-template.md` bar: **The Oversharer**, **The Copy-Paste Contractor**, **The Poisoned
+  PDF**, **The Over-Permissioned Assistant**, **The Runaway Agent**, **The Overengineer**, and
+  **The Overnight Cowboy**. No axes, mappings, or names changed — these expand existing catalog rows,
+  they do not introduce new vocabulary. Notable framing carried into the entries: The Poisoned PDF is
+  the second artifact persona (with The Trojan Rulebook); The Overnight Cowboy is written as the
+  teaching case for the preparedness axis ("earned recklessness"); The Oversharer and The Copy-Paste
+  Contractor are framed as mirror images (sensitive data flowing out vs. untrusted content flowing in).
+
 ### Added
 - **The Secondhand Executive** — a senior decision-maker who has delegated reading, summarizing and
   replying to agents, and now works entirely from unaudited compressions. Fills the **LLM09
