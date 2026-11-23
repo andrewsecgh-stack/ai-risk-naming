@@ -16,8 +16,10 @@ to know it came from a document that was talking to their assistant behind their
 **The axes:**
 | Axis | Value | Note |
 |---|---|---|
-| Actor | Outsider (upstream) | an anonymous author the victim never meets — an artifact persona |
-| Intent | Malicious | the hidden payload is deliberate; the person who opens it is blameless |
+| Actor — origin | Outsider (upstream) | an anonymous author the victim never meets — an artifact persona |
+| Actor — trigger | Insider | whoever opens the file and asks an assistant about it |
+| Intent — origin | Malicious | the hidden payload is deliberate |
+| Intent — trigger | Ignorant | opening and summarizing a document is the job; they did nothing wrong |
 | Preparedness | Typically none | documents are almost never scanned for instructions before an assistant reads them |
 | Recoverability | Mixed → irreversible | an altered summary can be corrected; exfiltrated data cannot |
 | Impact | Data exposure, integrity | leaked context first, corrupted output second |
@@ -29,7 +31,9 @@ instruction. NIST AI RMF: Manage (input handling), Measure (output verification)
 **Why it is named for the artifact:** This is one of the two sanctioned artifact personas (see
 `CONTRIBUTING.md`). The real actor is an anonymous upstream stranger the victim never encounters, so
 naming a *person* would be naming a ghost. The victim's whole experience of the attack is the file in
-front of them — so the persona is the file. The same reasoning names **The Trojan Rulebook**.
+front of them — so the persona is the file. The same reasoning names **The Trojan Rulebook**. In origin/trigger terms,
+artifact personas are named for what the origin left behind, because the trigger never meets the
+origin at all.
 
 **What AI changes:** Everything about the vector. A document with white-on-white text or a loaded
 metadata field did nothing before assistants began reading files as potential instructions. The

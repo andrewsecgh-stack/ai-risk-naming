@@ -16,8 +16,10 @@ or a smoking crater, and which one was mostly luck.
 **The axes:**
 | Axis | Value | Note |
 |---|---|---|
-| Actor | Automated agent | acting alone, unattended, on a human's instruction |
-| Intent | Legitimate | the work was sanctioned; the failure is the *absence of containment*, not the goal |
+| Actor — origin | Insider | the person who launches the agent and walks away |
+| Actor — trigger | Automated agent | acting alone, unattended, on that instruction |
+| Intent — origin | Legitimate | the work was sanctioned; the failure is the *absence of containment*, not the goal |
+| Intent — trigger | None | an agent carries no intent of its own; it does exactly what it was told |
 | Preparedness | **The whole point** — none in this persona | fully prepared, the same act is responsible; unprepared, it is reckless |
 | Recoverability | Mixed | judged per impact class — see below |
 | Impact | Cross-cutting | availability and integrity if it breaks things; data exposure if it leaks; denial of wallet if it loops |
@@ -32,7 +34,10 @@ concrete. The *act* — running an agent autonomously overnight — is not inher
 a hard budget cap, approval gates on destructive operations, snapshots taken first, and someone
 on-call. With **no preparedness** the identical act is recklessness waiting for its unlucky night. The
 persona name captures the *unprepared* version; the prepared version is not a different persona but a
-control state — "earned recklessness," the same cowboy with a rope and a fence.
+control state — "earned recklessness," the same cowboy with a rope and a fence. The origin/trigger split
+sharpens the point: the agent that does the damage carries no intent, and the only intent in the
+scenario — the launcher's — is legitimate either way. So the difference between responsible and
+reckless can only live on the preparedness axis.
 
 **The preparedness rule, per impact class:** Containment must be judged against each impact class it
 faces, not as a blanket "we took a backup." Snapshots and rollback can *fully* cover the reversible

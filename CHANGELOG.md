@@ -43,13 +43,28 @@ Versioning is informal while the framework is a working draft.
   upstream stranger the victim never meets, the persona is named for the artifact they actually
   encounter. Applies to The Poisoned PDF and The Trojan Rulebook. Recorded in `CONTRIBUTING.md`.
 
+### Changed — framework
+- **Origin/trigger split for two-actor scenarios.** Where a scenario needs one party to create the
+  hazard and a different party to set it off, Actor and Intent are now scored twice — *origin* and
+  *trigger* — while Preparedness, Recoverability and Impact are scored once for the incident. An
+  automated agent carries no intent of its own: an agent trigger scores `none`, and intent sits with
+  whoever built or launched it. Catalog notation is now defined: `+` origin + trigger, `→` drift over
+  time, `/` variants. Resolves the two-actor question raised by The Trojan Rulebook; a compound
+  convention was chosen over redesigning the axes or leaving per-entry notes.
+
+### Changed — entries
+- Re-scored under the split: **The Trojan Rulebook** (notation unchanged, now defined);
+  **The Poisoned PDF** (Outsider + insider, M + I — previously Outsider, M);
+  **The Copy-Paste Contractor** (Outsider + insider, M + I — previously Insider, I);
+  **The Overnight Cowboy** (Insider + automated agent, L + none — previously Automated agent, L);
+  **The Runaway Agent** (Builder + automated agent, N + none — previously Automated agent, N).
+- **The Over-Permissioned Assistant** deliberately stays single-scored: its trigger is whatever
+  happens to hit the over-grant, not a defined part of the scenario.
+
 ### Open for review
 - **The Secondhand Executive** primary OWASP mapping: LLM09 (the harm — decisions on lossy output)
   versus LLM06 (the mechanism — delegated authority to read, summarize and reply). Left provisional
   pending contributor input.
-- **Two-actor scenarios.** The Trojan Rulebook is the first entry containing two humans with
-  different intents — a malicious planter and an ignorant triggerer. The axes assume a single actor.
-  Whether this needs an axis change, a compound-intent convention, or a per-entry note is unsettled.
 
 ## [0.3] — insider trilogy and the null intent case
 
