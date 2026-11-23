@@ -44,6 +44,9 @@ Two of these exist because practitioners pushed back on earlier drafts. Prepared
 incident; the null-intent value came from a contributor pointing out that the axis assumed an actor
 when some of the most persistent AI risk has none.
 
+Where a scenario needs two parties — one who plants a hazard and another who unknowingly sets it
+off — Actor and Intent are scored separately for each: the **origin/trigger split**.
+
 ---
 
 ## Repository layout

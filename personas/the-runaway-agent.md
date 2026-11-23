@@ -14,8 +14,10 @@ and the only question is how large before someone happened to look.
 **The axes:**
 | Axis | Value | Note |
 |---|---|---|
-| Actor | Automated agent | no human in the moment; the loop runs itself |
-| Intent | Negligent (config) | the builder omitted the bounds, not out of malice but oversight |
+| Actor — origin | Insider (builder) | whoever built or deployed the agent without bounds |
+| Actor — trigger | Automated agent | no human in the moment; the loop runs itself |
+| Intent — origin | Negligent (config) | the bounds were omitted through oversight, not malice |
+| Intent — trigger | None | the agent carries no intent; it is doing what it was built to do, without end |
 | Preparedness | Typically none | budgets, iteration caps, and timeouts are the missing controls |
 | Recoverability | Reversible | the harm is financial and operational — absorb the cost, kill the run |
 | Impact | Denial of wallet | secondarily availability, if the loop starves shared resources |
@@ -32,7 +34,8 @@ converges.
 
 **Siblings:** The denial-of-wallet trio, one OWASP risk across three intents. **The Disgruntled
 Employee** drives the *malicious* version — deliberately looping costly calls; the Runaway Agent is
-the *negligent-config* version — bounds simply left off; **The Overengineer** is the *ignorant*
+the *negligent-config* version — bounds simply left off by its builder (the agent itself carries
+no intent); **The Overengineer** is the *ignorant*
 version — needless complexity that costs many times what the job requires. Same LLM10, three
 different people, three different fixes. The Runaway Agent's fix is the most mechanical of the three:
 set the limits.

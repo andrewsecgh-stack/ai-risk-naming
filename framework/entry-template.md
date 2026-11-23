@@ -26,6 +26,16 @@ retell — write it like a story, not a finding.
 | Recoverability | | per impact class if mixed |
 | Impact | | |
 
+If the scenario has two parties — one who creates the hazard and another who sets it off — replace the
+Actor and Intent rows with origin and trigger rows (see *the origin/trigger split* in `framework.md`):
+
+| Axis | Value | Note |
+|---|---|---|
+| Actor — origin | | who built, planted, or launched the hazard |
+| Actor — trigger | | who or what set it off |
+| Intent — origin | | |
+| Intent — trigger | | `none` if the trigger is an automated agent |
+
 **Maps to:** OWASP LLM Top 10 (2025) entry/entries; NIST AI RMF function where relevant.
 
 **Siblings:** Other personas in the same OWASP category, and what distinguishes this one

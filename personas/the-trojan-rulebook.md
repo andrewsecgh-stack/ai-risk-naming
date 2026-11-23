@@ -16,8 +16,10 @@ someone else's rulebook, and the person at the keyboard has no reason to suspect
 **The axes:**
 | Axis | Value | Note |
 |---|---|---|
-| Actor | Outsider (upstream), **and** insider (trigger) | see the two-actor note below |
-| Intent | Malicious (planter) + ignorant (triggerer) | the person who sets it off did nothing wrong |
+| Actor — origin | Outsider (upstream) | plants the payload in a repository or dependency |
+| Actor — trigger | Insider | sets it off by cloning, opening, or working in the project |
+| Intent — origin | Malicious | |
+| Intent — trigger | Ignorant | the person who sets it off did nothing wrong |
 | Preparedness | Typically none | instruction files are rarely reviewed, and often auto-load by default |
 | Recoverability | Mixed → irreversible | code changes revert; exfiltrated secrets do not |
 | Impact | Data exposure, integrity | plus propagation — payloads can spread across a codebase |
@@ -31,11 +33,12 @@ Excessive Agency where the assistant can act on what it has been told. NIST AI R
 reading repository files as standing instructions. This is not an old risk with a new surface — the
 attack did not exist until tools started granting documents the authority of configuration.
 
-**The two-actor note (open question):** This is the first entry with two humans in it — a malicious
-outsider who plants the payload and an ignorant insider who triggers it by working normally. Every
-other persona has a single actor with a single intent, and the axes assume that. Whether this needs
-an axis change, a compound-intent convention, or just a note per entry is genuinely unsettled.
-**Contributor input welcome.**
+**The two-actor note:** This was the first entry with two humans in it — a malicious outsider who
+plants the payload and an ignorant insider who triggers it by working normally — and it is the case
+that prompted the **origin/trigger split** (see `framework/framework.md`). Actor and intent are scored
+once for each side; preparedness, recoverability, and impact once for the incident. The split matters
+here because the controls sit almost entirely on the origin side and in the tooling between the two —
+not with the developer, who cannot see the payload at all.
 
 **Siblings:** **The Poisoned PDF** is the closest relative and the merge was considered and rejected.
 The difference is privilege: a poisoned PDF is *content* a person deliberately handed to a model; a

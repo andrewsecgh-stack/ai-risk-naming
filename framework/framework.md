@@ -64,12 +64,44 @@ covering **none** of the *irreversible* class (that same agent leaks proprietary
 nothing redeploys confidentiality back). "We can recover" is only true for the impacts you can actually
 reverse.
 
+### The origin/trigger split (two-actor scenarios)
+Some scenarios need two parties: one who **creates** the hazard and another whose ordinary action
+**sets it off**. A stranger plants hidden instructions in a repository; a developer opens the project
+and triggers them without doing anything wrong. Forcing one Actor and one Intent onto that scenario
+loses half of it — score it "malicious" and the blameless person at the keyboard reads as complicit;
+score it "ignorant" and the attacker disappears.
+
+So for these scenarios, **Actor and Intent are scored twice**:
+- **Origin** — who built, planted, or launched the hazard, and why.
+- **Trigger** — who or what set it in motion at the moment it bit, and why.
+
+Preparedness, Recoverability, and Impact are scored **once** — they describe the incident, not the
+people in it.
+
+Three rules keep the split from spreading:
+1. **Split only when origin and trigger differ**, and only when the trigger is a defined part of the
+   scenario. If a hazard simply waits for *anything* to hit it — The Over-Permissioned Assistant's
+   excess scope — score the origin alone; whatever eventually hits it is another persona's story.
+2. **An automated agent carries no intent of its own.** When an agent is the trigger, its intent is
+   `none`, and the meaningful intent sits with the origin: whoever built or launched it. The Runaway
+   Agent's negligence belongs to its builder, not to the loop.
+3. **The split is not a blame assignment.** An ignorant or legitimate trigger is usually the person the
+   entry should protect, not the one it should correct. The controls usually sit at the origin, or in
+   the tooling between the two.
+
+The split also makes the naming rule legible: artifact personas (The Poisoned PDF, The Trojan
+Rulebook) are named for what the origin left behind, because the trigger never meets the origin;
+The Copy-Paste Contractor is named for the trigger, because the person pasting is where you intervene.
+*(Prompted by The Trojan Rulebook, the first entry with two humans in it.)*
+
 ---
 
 ## Side 1 — Scenario catalog (personas)
 
 Intent key: M=malicious, N=negligent, I=ignorant, L=legitimate, none=unattributable. Prep = typical
 preparedness when the scenario bites. Recov = recoverability of the usual impact.
+Notation: `X + Y` = origin + trigger (two-actor scenarios, see the split above); `X → Y` = drift
+over time; `X / Y` = variants of the same scenario.
 
 | Persona | In one line | Actor | Intent | OWASP 2025 | Recov |
 |---|---|---|---|---|---|
@@ -77,14 +109,14 @@ preparedness when the scenario bites. Recov = recoverability of the usual impact
 | The Plant | A hire who was never loyal — placed to exfiltrate or sabotage from day one. | Insider (infiltrator) | M | Cross-cutting (LLM02 / LLM04) | Irreversible |
 | The Ghost Login | Access and agents still running under a name that no longer answers for them — whether the person left or simply moved on. | Ex-insider, or none | M / none | LLM10 / LLM02 / LLM06 | Mixed |
 | The Oversharer | A well-meaning employee pastes secrets or PII into a public AI tool. | Insider | N | LLM02 Sensitive Info Disclosure | Irreversible |
-| The Copy-Paste Contractor | Someone pastes untrusted outside content straight into a prompt. | Insider | I | LLM01 Prompt Injection | Mixed |
-| The Poisoned PDF | Hidden instructions ride in on a shared document (indirect injection). | Outsider | M | LLM01 Prompt Injection | Mixed |
+| The Copy-Paste Contractor | Someone pastes untrusted outside content straight into a prompt. | Outsider + insider | M + I | LLM01 Prompt Injection | Mixed |
+| The Poisoned PDF | Hidden instructions ride in on a shared document (indirect injection). | Outsider + insider | M + I | LLM01 Prompt Injection | Mixed |
 | The Trojan Rulebook | An auto-loaded instruction file carries hidden commands the assistant obeys. | Outsider + insider | M + I | LLM03 Supply Chain / LLM01 | Mixed→irreversible |
 | The Over-Permissioned Assistant | An agent is granted more tools/scopes than its task needs. | Builder | N | LLM06 Excessive Agency | Mixed |
-| The Runaway Agent | A well-intended agent loops unbounded and burns compute/budget. | Automated agent | N | LLM10 Unbounded Consumption | Reversible |
+| The Runaway Agent | A well-intended agent loops unbounded and burns compute/budget. | Builder + automated agent | N + none | LLM10 Unbounded Consumption | Reversible |
 | The Overengineer | An unskilled user builds needlessly complex agent setups, burning many times the tokens for the same result. | Insider / builder | I | LLM10 Unbounded Consumption | Reversible |
 | The Secondhand Executive | A senior decision-maker experiences the whole organization through agent summaries nobody audits. | Insider (senior) | L→N | LLM09 Misinformation / LLM06 | Mixed |
-| The Overnight Cowboy | Unattended AI testing runs in production with no containment. | Automated agent | L | LLM06 / LLM10 | Mixed |
+| The Overnight Cowboy | Unattended AI testing runs in production with no containment. | Insider + automated agent | L + none | LLM06 / LLM10 | Mixed |
 
 Notes:
 - **The Overnight Cowboy** is the teaching case for the preparedness axis: same act, *full* preparedness →
@@ -204,6 +236,10 @@ the waste, and worth naming because the fix is cultural (norms, incentives), not
 ## How to score a scenario
 
 `(Actor · Intent · Preparedness · Recoverability · Impact)  ×  which Side 2 conditions are present`
+
+For a two-actor scenario, Actor and Intent are scored for each side:
+
+`(Actor · Intent)origin + (Actor · Intent)trigger · Preparedness · Recoverability · Impact  ×  conditions`
 
 The same scenario can be responsible or reckless depending on preparedness — and preparedness is only
 real for the impact classes it actually covers. Read the climate (Side 2) to predict which storms

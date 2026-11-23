@@ -16,8 +16,10 @@ inside it. It follows the buried instruction, and the person who pasted it never
 **The axes:**
 | Axis | Value | Note |
 |---|---|---|
-| Actor | Insider (conduit) | a trusted user manually carrying untrusted content across the boundary |
-| Intent | Ignorant | they were processing material, unaware content can be an instruction |
+| Actor — origin | Outsider | whoever wrote the payload into the content — a sender, a page author, an applicant |
+| Actor — trigger | Insider (conduit) | a trusted user carrying untrusted content across the boundary — the persona is named for this side |
+| Intent — origin | Malicious | the embedded instruction is deliberate |
+| Intent — trigger | Ignorant | they were processing material, unaware content can be an instruction |
 | Preparedness | Typically none to partial | rarely any sanitization between paste and prompt |
 | Recoverability | Mixed | a bad draft is reversible; an exfiltration or action taken may not be |
 | Impact | Integrity, then data exposure | hijacked behavior first, leaked or destructive actions after |
@@ -34,9 +36,11 @@ the moment a trust boundary is crossed, and nothing in the ordinary workflow mar
 **Siblings:** The prompt-injection family. **The Poisoned PDF** is the artifact — the payload rides
 in on a file a person opens; **The Trojan Rulebook** auto-loads as instruction with nobody in the
 loop. The Copy-Paste Contractor is the **human conduit** between them: a person deliberately, if
-unknowingly, carries the untrusted content in by hand. The distinguishing axis is intent — malicious
-planter, ignorant carrier — and the control follows: sanitize the content, and teach the carrier that
-pasted material is untrusted input, not a safe instruction. The inverse persona is **The Oversharer**,
+unknowingly, carries the untrusted content in by hand. Under the origin/trigger split all three
+score the same — malicious origin, ignorant trigger — so what separates them is the delivery path,
+and therefore where you intervene: the artifact, the tool's auto-load default, or the person carrying
+content across the boundary by hand. This is the one injection persona named for the **trigger**
+rather than the origin, because here the person pasting is the point of intervention. The inverse persona is **The Oversharer**,
 who pushes sensitive data out rather than pulling untrusted content in.
 
 **Conditions that feed it:** *Forced Adoption* — people told to use AI on external material, with no
